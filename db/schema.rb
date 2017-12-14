@@ -14,27 +14,27 @@
 ActiveRecord::Schema.define(version: 20171210045104) do
 
   create_table "class_rooms", force: :cascade do |t|
-    t.integer  "person_price",   null: false
-    t.string   "style_name",     null: false
-    t.float    "expect_count",   null: false
-    t.boolean  "can_add_bed",    null: false
-    t.float    "discount_rate"
-    t.float    "surcharge_rate"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "person_price",                 null: false
+    t.string   "style_name",                   null: false
+    t.float    "expect_count",                 null: false
+    t.boolean  "can_add_bed",                  null: false
+    t.float    "discount_rate",  default: 1.0, null: false
+    t.float    "surcharge_rate", default: 1.0, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "user_id",         null: false
-    t.string   "name",            null: false
-    t.string   "password",        null: false
-    t.string   "address",         null: false
-    t.integer  "tel",             null: false
-    t.integer  "age",             null: false
-    t.string   "email",           null: false
-    t.boolean  "admin_authority"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "user_id",                         null: false
+    t.string   "name",                            null: false
+    t.string   "password",                        null: false
+    t.string   "address",                         null: false
+    t.integer  "tel",                             null: false
+    t.integer  "age",                             null: false
+    t.string   "email",                           null: false
+    t.boolean  "admin_authority", default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "plan_rooms", force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20171210045104) do
 
   create_table "plans", force: :cascade do |t|
     t.string   "name",        null: false
-    t.integer  "apply_count"
+    t.integer  "apply_count", null: false
     t.integer  "price",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
