@@ -17,4 +17,11 @@
 
 class Member < ActiveRecord::Base
 	has_many :reservations
+
+	def password = (val)
+		if val.present?
+			self.password = BCrypt::Password.create(val)
+		end
+		@password = val
+	end
 end
