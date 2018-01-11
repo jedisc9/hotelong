@@ -17,10 +17,11 @@
 
 class Member < ActiveRecord::Base
 	has_many :reservations
+	attr_accessor :password
 
-	def password = (val)
+	def password=(val)
 		if val.present?
-			self.password = BCrypt::Password.create(val)
+			self.hashed_password = BCrypt::Password.create(val)
 		end
 		@password = val
 	end
