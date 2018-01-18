@@ -1,17 +1,2 @@
-<h1>ログイン</h1>
-<table id = "login_form">
-  <tr>
-    <td style = "text-align: right">ユーザID：</td>
-    <td><input type = "text" size = "16" style = "width: 120px" /></td>
-  </tr>
-
-  <tr>
-    <td style = "text-align: right">パスワード：</td>
-    <td><input type = "password" size = "16" style = "width: 120px" /></td>
-  </tr>
-
-  <tr>
-    <td colspan = "2" style = "text-align: center">
-    <input type = "submit" value = "ログイン" /></td>
-  </tr>
-</table>
+<h1>Top#index</h1>
+<%= render "shared/login_form" unless current_member %>
